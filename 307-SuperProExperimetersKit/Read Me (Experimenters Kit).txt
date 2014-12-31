@@ -1,0 +1,143 @@
+Release notes for the HITECHNIC® SuperPro Experimenter's Kit B for use with LEGO® MINDSTORMS® NXT Software
+and LEGO® MINDSTORMS® Education NXT Software 
+
+for Windows® XP Home Edition, Windows® XP Professional, Windows® VISTA, Windows 7
+Mac OS X® v10.3.9 and Mac OS X v10.4
+
+
+Disclaimer
+The software is provided as-is without any warranty of any kind. The entire risk arising out the use or performance of the software remains with you. To the maximum extent permitted by applicable law, in no event shall Dataport Systems, Inc (including HiTechnic Products Division) and its suppliers and licensors, be liable for any damages arising out of the use or inability to use the software. 
+
+To install and use the software, you must have agreed to the terms of the License Agreement included with the software. Please be sure to read the License Agreement before installing HiTechnic Prototype Sensor Block Software on your system.
+
+In the following LEGO MINDSTORMS NXT Software and LEGO MINDSTORMS Education NXT Software will be referred to as LEGO MINDSTORMS NXT Software.
+
+Table of Contents:
+
+1) System requirements
+
+	- Microsoft Windows
+
+	- Apple Macintosh
+
+2) Installing the HiTechnic Prototype Sensor Block for LEGO MINDSTORMS NXT Software 
+
+3) Uninstalling the HiTechnic Prototype Sensor Block for LEGO MINDSTORMS NXT Software
+
+4) Help and support 
+
+5) Legal 
+
+
+1) SYSTEM REQUIREMENTS
+
+NOTE! The LEGO MINDSTORMS NXT Software and the Dynamic Block Update (For version 1.0) must be installed prior to installing the HiTechnic Prototype Sensor Block.
+
+Please make sure to be online when installing to make sure the latest requirements are taken in to consideration.
+
+LEGO MINDSTORMS NXT Software minimum system requirements:
+
+General
+256MB of RAM minimum (512 MB recommended)
+Up to 300MB of available hard-disk space
+XGA display (1024x768)
+1 available USB port
+CD-ROM drive
+Compatible Bluetooth adapter (optional)*
+
+Microsoft Windows
+Windows XP Professional or Home Edition with Service Pack 2
+Intel® Pentium® processor or compatible, 800 MHz minimum
+(1.5 GHz or better recommended)
+
+Apple Macintosh
+Apple Mac OS X v. 10.3.9 or 10.4
+PowerPC® G3, G4, G5 processor, 600 MHz minimum**
+(1.3 GHz or better recommended)
+
+*) Supported Bluetooth software are Widcomm® Bluetooth for Windows newer than v. 1.4.2.10 SP5 and the Bluetooth stacks included in Microsoft Windows XP with Service Pack 2 / Apple Mac OS X 10.3.9 and 10.4.
+
+**) The LEGO MINDSTORMS NXT Software is currently available for Intel-based Macintosh system using Rosetta emulation. A universal update which will run native on Mactel systems will be available as soon as possible. While LEGO MINDSTORMS NXT Software is using the Rosetta emulator Bluetooth functionality will not be available.
+
+
+2) INSTALLING THE HITECHNIC SuperPro Sensor BLOCK FOR LEGO MINDSTORMS NXT SOFTWARE
+
+Administrator privileges are required when installing the SuperPro Sensor Block for LEGO MINDSTORMS NXT Software.
+
+1. Verify that all installed versions of LEGO MINDSTORMS NXT Software are not currently running.
+
+2. Launch LEGO MINDSTORMS NXT Software and create a new program by clicking 'Go' under 'Start New Program'. It is preferred that you haven't opened any other programs (during this session of the software) prior to importing blocks.
+
+3. Under the 'Tools' menu, select the 'Block Import and Export Wizard...'.
+
+4. Click 'Browse' to select the directory ("SuperPro Sensor") that contains the SuperPro Sensor Block.
+
+5. Once the wizard has found the blocks, select the block by clicking on it.
+
+6. Click 'Import'
+
+7. Close.
+
+
+3) UNINSTALLING THE HITECHNIC Prototype Sensor BLOCK FOR LEGO MINDSTORMS NXT SOFTWARE
+
+The Block Import/Export Utility doesn't have the ability to uninstall a block.
+
+To completely uninstall a block from the LEGO MINDSTORMS NXT Software installation, you will need to manually delete the files that were created during the import process.
+
+Before you begin, verify that all installed versions of LEGO MINDSTORMS NXT Software are not currently running.
+
+The SuperPro Sensor Block is contained in the directory “SuperPro Sensor”.
+
+The Block can be removed from the palette by deleting the palette file for the block found under
+
+	<LEGO MINDSTORMS NXT Directory>/engine/EditorVIs/BlockRegistry/<Palette Name>/SuperPro Sensor.txt
+
+The actual block files can be deleted at
+
+	<LEGO MINDSTORMS NXT Directory>/engine/vi.lib/LEGO/Blocks/SuperPro Sensor
+
+The help files can be deleted at
+
+	<LEGO MINDSTORMS NXT Directory>/engine/EditorVIs/Help Content/Block_SuperPro Sensor.htm
+
+	<LEGO MINDSTORMS NXT Directory>/engine/EditorVIs/Help Content/Full Help/topics/Help_SuperPro Sensor.htm
+
+	<LEGO MINDSTORMS NXT Directory>/engine/EditorVIs/Help Content/SuperPro Sensor Files
+
+	<LEGO MINDSTORMS NXT Directory>/engine/EditorVIs/Help Content/Full Help/topics/SuperPro Sensor Files
+
+
+4) HELP AND SUPPORT
+
+HITECHNIC SuperPro Sensor BLOCK Software:
+For additional help and support visit HiTechnic online at http://www.HiTechnic.com or email support@hitechnic.com with "SuperPro Sensor Block" in the subject.
+
+LEGO MINDSTORMS NXT Software:
+For additional help and support visit the LEGO MINDSTORMS Help and Support Center online http://www.MINDSTORMS.com/support
+
+For information on using Bluetooth with LEGO MINDSTORMS NXT please visit http://www.MINDSTORMS.com/bluetooth
+
+
+LEGO MINDSTORMS Education NXT Software:
+Visit http://www.MINDSTORMSeducation.com for all inquiries related to LEGO MINDSTORMS Education NXT.
+
+
+5) LEGAL
+
+HiTechnic Software is developed and distributed by the HiTechnic Products Division of Dataport Systems, Inc, PO Box 321, Holland Patent, New York, 13354, USA. 
+Copyright © 2009 Dataport Systems, Inc.
+
+LEGO MINDSTORMS NXT Software is developed and distributed by the LEGO Group, DK-7190 Billund, Denmark. Copyright © 2006 the LEGO Group and its licensors. LEGO, the LEGO logo and MINDSTORMS are trademarks of the LEGO Group.
+
+LabVIEW & Powered by LabVIEW are trademarks of National Instruments. All rights reserved.
+
+The software contains Macromedia Flash Player software by Adobe Systems Incorporated. Copyright © 1995-2006 Adobe Systems Incorporated. All rights reserved. Adobe, Macromedia and Flash are either registered trademarks or trademarks of Adobe Systems Incorporated in the United States and/or other countries.
+
+The software contains a modified version of the Gecko® engine. The original source for the Gecko engine can be found on mozilla.org. At the time of the release, the source was at ftp://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla1.7.5/source. The Gecko engine source and modified files are licensed under the Mozilla Public License.The modified files and Mozilla Public License are available on the Software CD-ROM in the Modifications folder.
+
+Gecko is a registered trademark of Netscape Communications Corporation.
+
+Bluetooth is a trademark owned by Bluetooth SIG, Inc. and is licensed to the LEGO Group.
+
+2011-10-25

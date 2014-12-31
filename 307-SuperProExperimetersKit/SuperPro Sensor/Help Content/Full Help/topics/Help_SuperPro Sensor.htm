@@ -1,0 +1,191 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>SuperPro Sensor Block</title>
+
+<link href="../style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../scripts.js"></script>
+
+<!--[if lt IE 7]>
+<script type="text/javascript" src="../pngfix.js"></script>
+<![endif]-->
+
+</head>
+
+<body onload="initialize();">
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <p>
+
+	<!--[if IE]>
+	<iframe src="ienotice.html" frameborder="0" scrolling="No" allowtransparency="true" id="ienotice_frame" /></iframe>	
+	<![endif]-->
+
+	<img src="../topics/SuperPro%20Sensor%20Files/SuperPro%20Sensor.png" alt="Icon of block" />
+	<h1>SuperPro Sensor Block</h1>
+<div class="box" style="width: 887; height: 2570">
+    <p>This block can be used as a sensor block to read the analog and digital inputs as well as an action block to control the digital and analog outputs on the HiTechnic SuperPro prototype board.  As a sensor block you can select either Read Analog or Read Digital actions and specify a comparison to trigger the Yes/No output.  For these actions the block can also be embedded in a Wait, Loop, or Switch.  The block also has actions to control the input/output status of the digital pins B0-B7, write to the digital output, write to the strobe output, set status of the on-board LEDs and control the wave generator of the analog outputs.</p> 
+    <p><img border="0" src="../topics/SuperPro%20Sensor%20Files/SuperPro.gif"> </p> 
+    <p>The four analog input channels are labeled A0 - A3. The two analog outputs are
+	O0 and O1.  The six strobe outputs are labeled RD, WR, and S0 - S3.  The 
+	eight digital input/output pins are labeled B0 - B7.</p>
+	<p>	The board can supply a range of  
+    voltages to help you power your experimental circuitry. There is a common GND  
+    (ground) which is the negative supply connection and three positive  
+    supply connections available: 5V, 9V, and 3V. There is also an LED to warn  
+    you when power is being supplied to the board from the NXT. Commonly, you  
+    should disconnect the connection to the NXT while adjusting your  
+    experimental circuitry.</p>  
+	<p>The SuperPro prototype board also has two program controllable LEDs, one red and one blue.</p>
+    <p>When used as a stand alone sensor block, you must drag at least one output data wire from this block's data hub to another block to read information from the board.  If you are using the block to control output from the board then no data wires are necessary but can be used if you have variable data you want to output.  The Read Analog and Read Digital actions can also be used from the Wait, Loop, and Switch if you select SuperPro Sensor as the sensor for these blocks/program structures.</p>   
+	<h2>Display Settings</h2> 
+	<!-- Image of block -->
+	<p><img src="SuperPro%20Sensor%20Files/SuperPro_OnOpen.png" alt="Image of block" /></p>
+	<ol>
+		<li>The number shows which of your NXT's ports are connected to the 
+          prototype sensor. You can change this number in the configuration panel if you need to.</li>   
+		<li>Text on block indicates the action selected, in this case to read analog port 0.</li>
+		<li>The block's data hub will open automatically when the block is placed in the work area. This plug gives the value from the SuperPro depending on the selected read action.</li>
+		<li>This data plug gives a Yes/No output that is the result of the comparison when either of the Read actions are selected.</li>
+		
+	</ol>
+	<p>At least one data wire must be dragged from the block's output plug to another block's data hub to get information from the SuperPro.</p>
+	<h2>Configuring the Prototype Sensor Block</h2> 
+	<p><img src="SuperPro%20Sensor%20Files/SuperProConfig_SelectAction.png" alt="Image of configuration panel" /></p>
+	<p>Choose the port where your SuperPro board is plugged in. By default, the block will be set to port 1. You can change this selection if you need to.</p>
+	<p>The SuperPro Block allows you to select 1 of 7 actions.  Click on the Action drop-down to select the action you wish to perform.</p>
+	<ol>
+	<li><strong>Read Analog Port</strong>
+	<p><img src="SuperPro%20Sensor%20Files/SuperProConfig_ActionReadAnalogPort.png" alt="Image of Read Analog Port configuration panel" /></p>
+	<p>Select the Read Analog Port action to read one of four analog input ports from the SuperPro.  These are labeled A0 - A3.  Select the analog port that you want to read.  If you want to compare the analog value with a constant, set the Compare Mode (<, >, or =) and the Compare Value.  The result of this comparison comes out on the Yes/No output of the block.  Note that this comparison result is used when you embed the block in a Wait, Switch, or as a Loop condition.</p>
+	<p>Note that the result value will be in the range of 0 to 1023 and that this range corresponds to an voltage range of 0 to 3.3 volts.  To convert the value to actual volts, divide the value by 310.  For example, if the analog value is 512 then 512/310 will give you 1.65 volts.  If you are using LEGO Mindstorms 1.0 then you can convert the value to millivolts by first multiplying the value by 1000 and then dividing by 310.</p>
+	<p>If an input which is not connected to anything is read, it will return an 
+    unpredictable reading.</p>
+	</li>
+	<li><strong>Read Digital Port</strong>
+	<p><img src="SuperPro%20Sensor%20Files/SuperProConfig_ActionReadDigitalPort.png" alt="Image of Read Digital Port configuration panel" /></p>
+	<p>Select the Read Digital Port action to read the 8 digital I/O pins as input.  These digital pins are labeled B0 - B7.  You must set the Mask with value to select the pins you want to read.  Note that this is a binary value and each bit in the value corresponds to one of the input bits.  For example, if you want to read just B0 then set the mask to 1. For B1 use 2, and if you want both B0 and B1 set the mask to 3.  If you want to read all 8 input bits then set the mask to 255 (or FF in Hex, 11111111 in binary).  To make it easier to set the mask you can change the base of the number to hexadecimal (Hex) or binary (Bin).</p>
+	<p>Note that for a bit to be available as input, the Write Digital Control action must not have been used to set the bit for output.  See the Write Digital Control action below.</p>
+	<p>If you want to compare the digital value with a constant, set the comparison operator (&lt;, &gt;, or =) and the Compare Value.  The result of this comparison will come on the Yes/No output of the block.  Note that the comparison result is what is used when you embed the block in a Wait, Switch, or Loop structure.</p></li>
+	<li><strong>Write Digital Port</strong>
+	<p><img src="SuperPro%20Sensor%20Files/SuperProConfig_ActionWriteDigitalPort.png" alt="Image of Write Digital Port configuration panel" /></p>
+	<p>Select the Write Digital Port action to write to any of the 8 digital I/O bits as output.  These digital bits are labeled B0 - B7.  Note that this is a binary value and each bit in the value corresponds to one of the output bits.  To make it easier to set the mask you can change the base of the number to hexadecimal (Hex) or binary (Bin).</p>
+	<p>Note that for a bit to be available as an output, the Write Digital Control action must first be used to set the bit for output.  See the Write Digital Control action below.</p>
+	</li>
+    <li><strong>Write Digital Control</strong>
+	<p><img src="SuperPro%20Sensor%20Files/SuperProConfig_ActionWriteDigitalControl.png" alt="Image of Write Digital Control configuration panel" /></p>
+	<p>Select the Write Digital Control action to set up any of the 8 digital I/O pins for output.  Setting a bit to 1 will make the corresponding pin be set for output.  Note that this is a binary value and each bit in the value corresponds to one of the output pins.  To make it easier to set the mask you can change the base of the number to hexadecimal (Hex) or binary (Bin).</p>
+	<p>For example, if you want to use B0 and B1 for output, set the control value to 3, binary 11.  These will leave the remaining pins, B2 - B7 as input pins.  If you want all 8 pins to be used for output then set the control value to 255, binary 11111111.</p>
+	</li>	
+	<li><strong>Set Strobe Control</strong>
+	<p><img src="SuperPro%20Sensor%20Files/SuperProConfig_ActionSetStrobeControl.png" alt="Image of Set Strobe Control configuration panel" /></p>
+	<p>Select the Set Strobe Control action to write to the 6 strobe output pins.  Four of these pins, S0 - S4, can be used as general purpose digital outputs and will correspond to the low four bits of the input value.  There are also two special purpose strobe pins, RD, and WR, that can also be written to with this action but these output pins are also pulsed when you do a Digital Read or Digital Write respectively.</p>
+	Note that this is a binary value and each bit in the value corresponds to one of the output pins.  To make it easier to set the mask you can change the base of the number to hexadecimal (Hex) or binary (Bin).</p></li>
+	<li><strong>LED Control</strong>
+	<p><img src="SuperPro%20Sensor%20Files/SuperProConfig_ActionLEDControl.png" alt="Image of LED Control configuration panel" /></p>
+	<p>Select the LED Control action to control the two on board LEDs.  Simply mark the LEDs that you want to have turned on.</p></li>
+	<li><strong>Analog Output</strong>
+	<p><img src="SuperPro%20Sensor%20Files/SuperProConfig_ActionAnalogOutput.png" alt="Image of Analog Output configuration panel" /></p>
+	<p>Select the Analog Output action to control one of the two analog outputs.  Chose the analog port, which will correspond to the pins O0 and O1.  The Analog Mode option will let you choose between 7 different wave patterns:</p>
+	<ol>
+	<li><strong>DC - </strong> output the specified voltage a constant direct current level.</li>
+	<li><strong>Sine Wave - </strong> output the signal at the specified frequency as a sine wave.</li>
+	<li><strong>Square Wave - </strong> output the signal at the specified frequency as a square wave.</li></li>
+	<li><strong>Positive Sawtooth - </strong> output the signal at the specified frequency as a positive sawtooth wave.</li>
+	<li><strong>Negative Sawtooth - </strong> output the signal at the specified frequency as a negative sawtooth wave.</li>
+	<li><strong>Triangle Wave - </strong> output the signal at the specified frequency as a triangle wave.</li>
+	<li><strong>PWM - </strong> output as a pulse width modulation signal.  The output signal pulse width is regulated by the voltage input and the frequency is determined by the frequency input.</li>
+	</ol>
+	<p>The Frequency value is used for all the Analog modes except DC and is in Hz (cycles per second).</p>
+	<p>The Voltage value from 0 to 1023 and corresponds to a voltage level/range of 0 to 3.3 volts.	Note that the the Sine, Square, Sawtooth, and Triangle waves are centered on the 1.65 volt level and that the Voltage input corresponds to the range of the voltage as a result of the wave.  For example, when outputting a Sine wave with a Voltage value of 512, then you will get a wave that ranges from .825 volts to 2.475 volts, that is, a wave centered at 1.65 volts with a range of 1.65 volts.</p>
+	
+	<h2>Help with using data wires</h2>
+	<!-- Image showing unopened tab on a generic block -->
+	<p><img src="../images/connections/helpadd_01.png" alt="Image showing unopened tab on a generic block" width="76" height="80" /></p>
+	<p>Data wires carrying input information to a block are connected to the plugs on the left side of its data hub. Data wires carrying output information are connected to the plugs on the right side.</p>
+	<!-- Image of data wires -->
+	<p><img src="../images/connections/helpadd_02.png" alt="Image of data wires" width="150" height="171" /></p>
+	<p>[A] Input plug<br />
+	[B] Output plug<br />
+	[C] Number data wire (yellow)<br />
+	[D] Logic data wire (green)<br />
+	[E] Text data wire (orange)<br />
+	[F] Broken data wire (gray)</p>
+	<h3>Passing data from the input plug to the output plug</h3>
+    <p>If an input plug has a corresponding output plug (see A above), the input data will pass through from the input plug to the output plug without being changed. In this case, you can only use the output plug if the input plug is connected to an input data wire; connecting an output data wire to such an output plug without a connected input data wire will cause the output data wire to be 
+    &quot;broken&quot; (and colored gray).</p>   
+	<h3>Data wires carry specific types of data</h3>
+    <p>Each data wire carries a specific type of data between blocks. For example, if a data wire is dragged from a logic plug on a block's data hub, it can only be connected to a logic plug on another block's data hub. The chart below shows what kind of data each plug can accept or send out.</p>  
+	<h3>Data wire colors</h3>
+	<p>Data wires are identified with specific colors: wires carrying number data are colored yellow, wires carrying logic data are colored green, and wires carrying text data are colored orange.</p>
+    <h3>&quot;Broken&quot; data wires</h3>  
+	<p>If you try to connect a data wire to a plug of the wrong data type, the data wire will be broken (and colored gray).  You will not be able to download your program if a data wire is broken.</p>
+	<p>If you click a broken wire you can read why it is broken in the small help window in the lower right corner of the work area.</p>
+	<h3>Data must be within the possible range of the plug</h3>
+	<p>If an input data wire transmits a value outside the possible range of the plug it is connected to, the block will either ignore the value or change it to a value within its range.  For plugs that allow just a few input values (example: just 0, 1, or 2), the plug will ignore the input if a value arrives outside its range.</p>
+    <p>For plugs that accept larger input ranges (example: 0 - 100), the plug will force any input outside its range to fit.  For example, if a Move block's Power plug receives an input value of 150, the block will change the input value to 100 (i.e., a number within the Power plug's range).</p>   
+	<h2>SuperPro Sensor block Data Hub plugs</h2>  
+	<p>Clicking on the bottom edge of the block will fully open the Data Hub as shown.</p>  
+	<!-- Image of block -->
+	<table border="0"><tr>
+	<td valign="top"><img src="SuperPro%20Sensor%20Files/SuperPro_Full.png" alt="Image of block"  /></td>
+	<td><p><ol>
+		<li>This plug wires the port number for the NXT Port used for the SuperPro.</li>		<li>This plug wires the action to be performed by the block.  The actions are numbered starting with zero:
+		  <ol start="0"> 
+			  <li>Read Analog Port</li>
+			  <li>Read Digital Port</li>
+			  <li>Write Digital Control</li>
+			  <li>Set Strobe control</li>
+			  <li>LED Control</li>
+			  <li>Analog Output</li>
+		  </ol>
+		 </li>
+		<li>This plug wires the general input value.  This can be the digital mask, digital write value, digital control, strobe control, LED control, and the analog output voltage level depending on the selected action.</li> 
+		<li>This plug is the analog port used for both the input A0 - A3 and the output O0 and O1 depending on the action.</li>
+		<li>This plug wires the analog mode for the Analog Output action.  The analog modes are numbered starting with zero:
+		  <ol start="0"> 
+			  <li>DC</li>
+			  <li>Sine Wave</li>
+			  <li>Square Wave</li>
+			  <li>Positive Sawtooth</li>
+			  <li>Negative Sawtooth</li>
+			  <li>Triangle Wave</li>
+			  <li>Pulse Width Modulation</li>
+		  </ol>
+		</li>	
+		<li>This plug wires the frequency for the analog output in Hertz and can be in the range 1 to 8191.</li>
+		<li>This plug wires the comparison mode used for the two read actions.  The Compare modes are numbered starting with zero:
+		  <ol start="0"> 
+			  <li>&lt;</li>
+			  <li>&gt;</li>
+			  <li>=</li>
+		  </ol>
+		</li>
+		<li>This plug wires the value used for the comparison.</li>
+		<li>This output plug holds the value when used with one of the read actions.</li>
+		<li>This output plug holds the Yes/No result of the comparison when used with one of the read actions.</li>
+	  </ol></p></td>
+	</tr></table>  
+			
+	<h2>SuperPro prototype board power outputs</h2>    
+	<p>There are three power supply outputs available.</p>   
+	<p><img src="SuperPro%20Sensor%20Files/SuperProBoardPower.png" alt="Image of SuperPro Power Outputs" /></p>  
+	<p><b>9V</b></p>  
+	<p>The 9V output is basically the NXT battery voltage which is normally 
+    provided to sensors. This voltage may range from 6 - 9 volts and can supply 
+    about 12mA.</p>  
+	<p><b>5V</b></p>  
+	<p>The 5V supply is provided by a 5.0 volt regulator connected to the 9V 
+    supply. If no power is being drawn from the 9 volt supply, then about 12mA 
+    is available from this output.</p>  
+	<p><b>3V</b></p>  
+	<p>The 3V supply is provided by a 3.3 volt regulator connected to the 5V 
+    supply. If no power is being drawn from the 5 volt supply, then about 20mA 
+    is available from this output.</p>  
+</div>
+
+		
+</body>
+</html>

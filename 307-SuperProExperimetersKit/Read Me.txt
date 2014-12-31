@@ -1,0 +1,14 @@
+HiTechnic SuperPro Experimenter’s Kit B
+The files contained in this release are for the HiTechnic Experimenter’s Kit B.  
+ 
+LabVIEW – SuperPro VIs and example programs for LabVIEW 2009 Education Edition and LabVIEW for LEGO Mindstorms (2010).
+NXC  - Example programs for the NXC ‘C’ programming environment for the NXT
+NXT-G 1 – Example programs if using the MINDSTORMS NXT-G version 1.0 programming environment (requires that the SuperPro NXT-G block is installed)
+NXT-G 2 – Example programs if using the MINDSTORMS NXT-G version 2.x programming environment (requires that the SuperPro NXT-G block is installed)
+RobotC – Example programs for the RobotC 2.0 or above programming environment  
+SuperPro Sensor – NXT-G programming block for the HiTechnic SuperPro Board
+
+If using MINDSTORMS NXT-G programming environment, install the Prototype Sensor NXT-G block and the Prototype Digital Rd block using the Block Import Wizard.
+
+(C) HiTechnic 2011
+www.hitechnic.com

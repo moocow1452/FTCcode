@@ -1,0 +1,1 @@
+The NXC Sample Programs in this folder require BricxCC version 1.2.1 r5 or beyond (dated October 18, 2011 or later). 
